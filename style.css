@@ -1,3 +1,4 @@
+/* Two finger tap */
 *{
   box-sizing: border-box;
 }
@@ -54,16 +55,13 @@ body {
 }
 .orange {
   background-color:#80D8FF;
-  border-radius:100%;
-  width:400px;
-  height:400px;
 }
 
 .seafoam {
   background-color:#00B0FF;
-
 }
 
+/*  */
 
 
 * {
@@ -128,33 +126,5 @@ html,body {
   text-align: center;
 }
 
-*{
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  font-family: 'Helvetica', Arial;
-}
-#wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-#output {
-  background-color: #3B3B3B;
-  width: 100%;
-  display: block;
-  min-height: 30px;
-  padding: 10px;
-  font-size: 0.8em;
-  color: white;
-}
 
 
-/* .tap-area:active {
-  margin: 7px 0 0;
-  box-shadow: 0 0 #0052E0, 0 0 #2f2f2f, 0 3px 14px #FF3020 inset;
-} */
