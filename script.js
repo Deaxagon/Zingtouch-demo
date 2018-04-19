@@ -43,10 +43,10 @@ regionfive.bind(tapElementfive, pan, function(e){
  tapElementfive.style.background="black";
  console.log('swipe');
    c=1;
- /* if (x==1&&y==1&&c==1){
+  if (x==1&&y==1&&c==1&&a==1){
       unlocked= "Good job it's Unlocked";
       document.getElementById("lock").innerHTML = unlocked;
-  } */
+  } 
 //  tapElementfour.style.backgroundColor='black';
   setOutput([
     ['Gesture', 'Pan'],
@@ -125,10 +125,11 @@ regionfour.bind(tapElementfour, pinch, function(e){
   var textElement = document.getElementById('three');
   textElement.innerHTML = "Pinched";
   a=1;
-  if (x==1&&y==1&&c==1&&a==1){
+  /*if (x==1&&y==1&&c==1&&a==1){
       unlocked= "Good job it's Unlocked";
       document.getElementById("lock").innerHTML = unlocked;
     }
+    */
 //  tapElementfour.style.backgroundColor='black';
   setOutput([
     ['Gesture', 'Pinch'],
