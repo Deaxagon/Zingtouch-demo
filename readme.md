@@ -19,6 +19,3 @@ These gestures can be customized including the number of inputs it accepts, or h
 In our demo we showcase 4 of these: Tap, Swipe, pinch and pan.
 
 To be able to see our demo just download it from github: https://github.com/Deaxagon/Zingtouch-demo 
-
-
-

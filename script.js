@@ -6,9 +6,6 @@ function myFunction() {
   }
   }
 */
-
-
-
 var unlocked = document.getElementById('lock');
   unlocked = "Locked";
   document.getElementById("lock").innerHTML = unlocked;
@@ -16,6 +13,7 @@ var unlocked = document.getElementById('lock');
 var x;
 var y;
 var c;
+var a;
 
 
 
@@ -32,6 +30,7 @@ var swipe=new ZingTouch.Swipe({
 
 
 
+
 var tapElementfive = document.getElementById('five');
 var regionfive = new ZingTouch.Region(tapElementfive, true, false);
 var pan=new ZingTouch.Pan({
@@ -40,7 +39,7 @@ var pan=new ZingTouch.Pan({
 
 regionfive.bind(tapElementfive, pan, function(e){
   var textElement = document.getElementById('five');
-  textElement.innerHTML = "<br> <br> <br> dragged down!";
+  textElement.innerHTML = "dragged";
  tapElementfive.style.background="black";
  console.log('swipe');
    c=1;
@@ -64,13 +63,9 @@ regionfive.bind(tapElementfive, pan, function(e){
 })
 
 
-
-
-
-
 regionOne.bind(tapElementOne, swipe, function(e){
   var textElement = document.getElementById('one');
-  textElement.innerHTML = "Swiped!";
+  textElement.innerHTML = "Swipped!";
   tapElementOne.style.backgroundColor='black';
   x=1;
   console.log("swipe");
@@ -100,14 +95,13 @@ var TwoFingerTap = new ZingTouch.Tap({
   maxDelay: 1000
 });
 
-
 var regionTwo = new ZingTouch.Region(tapElementTwo, true, false);
 regionTwo.bind(tapElementTwo, TwoFingerTap, function(e){
   setOutput([
     ['Gesture', 'Tap'],
     ['inputs' , '2'],
     ['interval', Math.floor(e.detail.interval) + "ms"]
-    
+
   ]);
 
   var textElement = document.getElementById('two');
@@ -130,8 +124,8 @@ var pinch=new ZingTouch.Pinch({
 regionfour.bind(tapElementfour, pinch, function(e){
   var textElement = document.getElementById('three');
   textElement.innerHTML = "Pinched";
-  c=1;
-  if (x==1&&y==1&&c==1){
+  a=1;
+  if (x==1&&y==1&&c==1&&a==1){
       unlocked= "Good job it's Unlocked";
       document.getElementById("lock").innerHTML = unlocked;
     }
@@ -149,50 +143,6 @@ regionfour.bind(tapElementfour, pinch, function(e){
     }, 1000);
   })(textElement);
 })
-
-
-
-
-//rotate. wont work
-
-
-// var currentAngle = 15;
-// //Using a layer on top of the entire page for "fat-finger" detection on mobile devices.
-// document.getElementById('rotatable').style.transform = 'rotate(15deg)';
-
-// var target = document.getElementById('interaction');
-// var region = new ZingTouch.Region(target);
-
-// region.bind(target, 'rotate', function(e) {
-//   var rotatable = document.getElementById('rotatable');
-//   currentAngle += e.detail.distanceFromLast;
-//   rotatable.style.transform = 'rotate(' + currentAngle + 'deg)';
-
-//   setOutput([
-//     ['Gesture', 'Rotate'],
-//     ['angle', Math.floor(e.detail.angle) + "°"],
-//     ['distanceFromOrigin', Math.floor(e.detail.distanceFromOrigin) + "°"],
-//     ['distanceFromLast', Math.floor(e.detail.distanceFromLast) + "°"]
-//   ]);
-
-// });
-
-// function setOutput(data) {
-//   var outputStr = "> ";
-//   for (var i = 0; i < data.length; i++) {
-//     outputStr += data[i][0] + ": " + data[i][1] + ((i === data.length - 1) ? '' : ' , ');
-//   }
-//   var output = document.getElementById('output');
-//   output.innerHTML = outputStr;
-// }
-
-
-//rotate
-
-
-
-
-
 
 
 
@@ -234,7 +184,7 @@ regionthree.bind(tapElementThree, Rotate, function(e){
 
 
 
-//bubbles from sketch
+
 
 
 var NUM_BUBBLES = 50;
@@ -302,28 +252,25 @@ var customPan = new ZingTouch.Pan({
 });
 var startPan = customPan.start;
 
+customPan.start = function(inputs) {
+  /////////////////////////////////////////////////////////
+  console.log("color change");
+  bubble.color = 'rgba(' + getRandNum(0, 255) + ',' + getRandNum(0, 255)
+  + ',' + getRandNum(0, 255) + ',' + 0.5 + ')'; //last one is opacity
 
 
+  var canvas = document.getElementById('main-canvas');
+  var canvasRect = canvas.getBoundingClientRect();
 
-// customPan.start = function(inputs) {
-//   /////////////////////////////////////////////////////////
-//   console.log("color change");
-//   bubble.color = 'rgba(' + getRandNum(0, 255) + ',' + getRandNum(0, 255)
-//   + ',' + getRandNum(0, 255) + ',' + 0.5 + ')'; //last one is opacity
+  var x = inputs[0].current.x - canvasRect.left;
+  var y = inputs[0].current.y - canvasRect.top;
+  currentIndex = getIndex(x, y);
+  if (currentIndex !== null) {
+    bubbles[currentIndex].stopped = true;
+  }
 
-
-//   var canvas = document.getElementById('main-canvas');
-//   var canvasRect = canvas.getBoundingClientRect();
-
-//   var x = inputs[0].current.x - canvasRect.left;
-//   var y = inputs[0].current.y - canvasRect.top;
-//   currentIndex = getIndex(x, y);
-//   if (currentIndex !== null) {
-//     bubbles[currentIndex].stopped = true;
-//   }
-
-//   return startPan.call(this, inputs);
-// }
+  return startPan.call(this, inputs);
+}
 canvasRegion.bind(canvas, customPan, function(e) {
   setOutput([
     ['Gesture', 'Pan'],
