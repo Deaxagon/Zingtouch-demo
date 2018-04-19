@@ -8,6 +8,7 @@ function myFunction() {
 */
 
 
+
 var unlocked = document.getElementById('lock');
   unlocked = "Locked";
   document.getElementById("lock").innerHTML = unlocked;
@@ -31,7 +32,6 @@ var swipe=new ZingTouch.Swipe({
 
 
 
-
 var tapElementfive = document.getElementById('five');
 var regionfive = new ZingTouch.Region(tapElementfive, true, false);
 var pan=new ZingTouch.Pan({
@@ -40,7 +40,7 @@ var pan=new ZingTouch.Pan({
 
 regionfive.bind(tapElementfive, pan, function(e){
   var textElement = document.getElementById('five');
-  textElement.innerHTML = "dragged";
+  textElement.innerHTML = "<br> <br> <br> dragged down!";
  tapElementfive.style.background="black";
  console.log('swipe');
    c=1;
@@ -62,6 +62,10 @@ regionfive.bind(tapElementfive, pan, function(e){
     }, 1000);
   })(textElement);
 })
+
+
+
+
 
 
 regionOne.bind(tapElementOne, swipe, function(e){
@@ -95,6 +99,7 @@ var TwoFingerTap = new ZingTouch.Tap({
   numInputs: 1,
   maxDelay: 1000
 });
+
 
 var regionTwo = new ZingTouch.Region(tapElementTwo, true, false);
 regionTwo.bind(tapElementTwo, TwoFingerTap, function(e){
