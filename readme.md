@@ -18,7 +18,7 @@ ZingTouch comes with 6 main gestures :
 These gestures can be customized including the number of inputs it accepts, or how sensitive the gesture is to be recognized.
 In our demo we showcase 4 of these: Tap, Swipe, pinch and pan.
 
-To be able to see our demo just download it from github: https://github.com/Deaxagon/Zingtouch-demo or visit 
+To be able to see our demo just download it from github: https://github.com/Deaxagon/Zingtouch-demo 
 
 
 
