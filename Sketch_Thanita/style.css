@@ -97,13 +97,13 @@ html,body {
   width: 100%;
 }
 #output {
-  background-color: #3B3B3B; /* bar in the bottom */
+  background-color: rgba(255, 255, 255, 0); /* bar in the bottom */
   width: 100%;
   display: block;
   min-height: 30px;
   padding: 10px;
   font-size: 0.8em;
-  color: white; /* bottom text */
+  color: rgba(255, 255, 255, 0); /* bottom text */
 }
 
 #description {
@@ -118,7 +118,7 @@ html,body {
           align-items: center;
   position: fixed;
   top: 0;
-  color: #777;
+  color: rgb(0, 0, 0);
   z-index: -1;
   height: 100%;
   width: 100%;

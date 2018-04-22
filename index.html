@@ -20,23 +20,37 @@
 
 <body>
 
+
+
+    <div onmousedown="backgroundcolor(event)" align="center"><br>Tap here for a new<br>background
+      </div>
+      
+      <script>
+      function backgroundcolor(event) {
+          document.body.style.backgroundColor = 'rgba(' + getRandNum(0, 255) + ',' + getRandNum(0, 255) + ',' + getRandNum(0, 255) + ',' + 0.7 + ')'
+      }
+      </script>
+
+
+
+
   <div id="wrapper">
 
     <div id="tap-container">
       <div id="one" class="orange tap-area">
-        <<<
+        <
       </div>
       <div id="two" class="seafoam tap-area">
         ___ to unlock
       </div>
       <div id="three" class="redbubble tap-area">
-        ___ me!, I must be dreaming
+        ___ me, I must be dreaming!
       </div>
       <div id="five" class="dragable tap-area">
         v
       </div>
     </div>
-    <p id="lock">Locked</p>
+    <p id="lock" align="center">Locked</p>
     <div id="output"> </div>
   </div>
  <!-- <div id="wrapper">
@@ -47,6 +61,8 @@
    <!-- <div id="description">
      Click to change color.
    </div> -->
+
+   
 
 <div id="interaction" style=""></div>
  <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/374756/zingtouch-1.0.0.min.js'></script>

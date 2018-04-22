@@ -65,7 +65,7 @@ regionfive.bind(tapElementfive, pan, function(e){
 
 regionOne.bind(tapElementOne, swipe, function(e){
   var textElement = document.getElementById('one');
-  textElement.innerHTML = "Swipped!";
+  textElement.innerHTML = "Swiped!";
   tapElementOne.style.backgroundColor='black';
   x=1;
   console.log("swipe");
@@ -254,10 +254,10 @@ var customPan = new ZingTouch.Pan({
 var startPan = customPan.start;
 
 customPan.start = function(inputs) {
-  /////////////////////////////////////////////////////////
-  console.log("color change");
-  bubble.color = 'rgba(' + getRandNum(0, 255) + ',' + getRandNum(0, 255)
-  + ',' + getRandNum(0, 255) + ',' + 0.5 + ')'; //last one is opacity
+  // /////////////////////////////////////////////////////////
+  // console.log("color change");
+  // bubble.color = 'rgba(' + getRandNum(0, 255) + ',' + getRandNum(0, 255)
+  // + ',' + getRandNum(0, 255) + ',' + 0.5 + ')'; //last one is opacity
 
 
   var canvas = document.getElementById('main-canvas');

@@ -1,26 +1,26 @@
 //two finger tap
-var tapElementTwo = document.getElementById('two');
-var TwoFingerTap = new ZingTouch.Tap({
-  numInputs: 2,
-  maxDelay: 1000
-});
+// var tapElementTwo = document.getElementById('two');
+// var TwoFingerTap = new ZingTouch.Tap({
+//   numInputs: 2,
+//   maxDelay: 1000
+// });
 
-var regionTwo = new ZingTouch.Region(tapElementTwo, true, false);
-regionTwo.bind(tapElementTwo, TwoFingerTap, function(e){
-  setOutput([
-    ['Gesture', 'Tap'],
-    ['inputs' , '2'],
-    ['interval', Math.floor(e.detail.interval) + "ms"]
-  ]);
+// var regionTwo = new ZingTouch.Region(tapElementTwo, true, false);
+// regionTwo.bind(tapElementTwo, TwoFingerTap, function(e){
+//   setOutput([
+//     ['Gesture', 'Tap'],
+//     ['inputs' , '2'],
+//     ['interval', Math.floor(e.detail.interval) + "ms"]
+//   ]);
   
-  var textElement = document.getElementById('two');
-  textElement.innerHTML = "Tapped!";
-  (function(element){
-    setTimeout(function(){
-      element.innerHTML = "Two Finger Tap";
-    }, 1000);
-  })(textElement);
-})
+//   var textElement = document.getElementById('two');
+//   textElement.innerHTML = "Tapped!";
+//   (function(element){
+//     setTimeout(function(){
+//       element.innerHTML = "Two Finger Tap";
+//     }, 1000);
+//   })(textElement);
+// })
 
 /////////////
 
@@ -45,7 +45,7 @@ canvas.width = canvasPicker.width = bBox.width;
 canvas.height = canvasPicker.height = bBox.height;
 
 window.onresize = function(){
-  console.log('fire');
+  console.log('resized');
   resizeCanvas();
 }
 
